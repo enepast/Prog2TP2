@@ -7,6 +7,7 @@ package principal.controladores;
 
 import autores.modelos.Alumno;
 import autores.modelos.Profesor;
+import autores.vistas.VentanaAMAlumno;
 import grupos.modelos.Grupo;
 import idiomas.modelos.Idioma;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class ControladorPrincipal {
         ArrayList<PalabraClave> palabrasClaves = new ArrayList<>();
         ArrayList<Tipo> tipos = new ArrayList<>();
         ArrayList<Grupo> grupos = new ArrayList<>();
-        
+        /*
         Alumno a1 = new Alumno(1, "Nieva", "Dario", "asd123", "11");
         alumnos.add(a1);
         Alumno a2 = new Alumno(2, "Dario", "Nieva", "asd123", "12");
@@ -33,11 +34,11 @@ public class ControladorPrincipal {
         Alumno a3 = new Alumno(3, "Pastoriza", "Dario", "asd123", "13");
         alumnos.add(a3);
                 
-        for (Alumno alumn : alumnos){
-            alumn.mostrar();
-        }
+        for (Alumno alumn : alumnos) alumn.mostrar();*/
         
         
+        VentanaAMAlumno ventana = new VentanaAMAlumno(null);
+        ventana.setVisible(true);
     }
     
 }
