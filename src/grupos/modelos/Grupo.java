@@ -27,4 +27,11 @@ public class Grupo {
     public void mostrar(){
         System.out.println("Nombre: " + this.nombre + "\nDescripción: " + this.descripcion);
     }
+
+    public Grupo(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+    
+    
 }

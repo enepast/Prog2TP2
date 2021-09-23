@@ -23,4 +23,9 @@ public class Idioma {
     public String toString(){
         return "Nombre: " + this.nombre;
     }
+
+    public Idioma(String nombre) {
+        this.nombre = nombre;
+    }
+    
 }

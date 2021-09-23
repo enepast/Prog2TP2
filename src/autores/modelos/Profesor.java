@@ -16,6 +16,10 @@ public class Profesor {
     private String clave;
     private String cargo;
 
+    public Profesor(int dni, String apellidos, String nombres, String clave, String cargo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getDni() {
         return dni;
     }

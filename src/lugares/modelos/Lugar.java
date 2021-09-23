@@ -16,4 +16,10 @@ public class Lugar {
     public String toString(){
         return "Nombre: " + this.nombre;
     }
+
+    public Lugar(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
 }

@@ -24,4 +24,9 @@ public class PalabraClave {
     public String toString(){
         return "Nombre: " + this.nombre;
     }
+
+    public PalabraClave(String nombre) {
+        this.nombre = nombre;
+    }
+    
 }
