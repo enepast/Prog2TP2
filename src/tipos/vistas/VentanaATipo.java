@@ -86,7 +86,13 @@ public class VentanaATipo extends JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarClic(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClic
-        
+        //Agregado por @Dario
+        String nombre = this.txtNombre.getText().trim();
+        Tipo tipo = new Tipo(nombre);
+        this.tipos.add(tipo);
+        for(Tipo i : this.tipos)
+            System.out.println(i);
+        //Fin del agregado
     }//GEN-LAST:event_btnGuardarClic
 
 
