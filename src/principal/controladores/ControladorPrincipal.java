@@ -26,12 +26,12 @@ import tipos.vistas.VentanaATipo;
  */
 public class ControladorPrincipal {
     public static void main(String[] args) {
-        ArrayList<Alumno> alumnos = new ArrayList<>();
-        ArrayList<Profesor> profesores = new ArrayList<>();
-        ArrayList<Idioma> idiomas = new ArrayList<>();
-        ArrayList<PalabraClave> palabrasClaves = new ArrayList<>();
-        ArrayList<Tipo> tipos = new ArrayList<>();
-        ArrayList<Grupo> grupos = new ArrayList<>();
+//        ArrayList<Alumno> alumnos = new ArrayList<>();
+//        ArrayList<Profesor> profesores = new ArrayList<>();
+//        ArrayList<Idioma> idiomas = new ArrayList<>();
+//        ArrayList<PalabraClave> palabrasClaves = new ArrayList<>();
+//        ArrayList<Tipo> tipos = new ArrayList<>();
+//        ArrayList<Grupo> grupos = new ArrayList<>();
         /*
         Alumno a1 = new Alumno(1, "Nieva", "Dario", "asd123", "11");
         alumnos.add(a1);

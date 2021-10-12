@@ -88,7 +88,22 @@ public class VentanaAPalabraClave extends JDialog {
         
     }//GEN-LAST:event_btnGuardarClic
 
-
+    //Agregado por @Chuba
+    private void btnGuardarClic(java.awt.event.ActionEvent evt) {                                
+        String nombre = '';
+        if (!this.txtNOMBRE.getText().trim().isEmpty())
+            nombre = Integer.parseInt(this.txtDNI.getText().trim());
+        String apellidos = this.txtApellidos.getText().trim();
+        String nombres = this.txtNombres.getText().trim();
+        String cargo = this.txtCargo.getText().trim();
+        String clave = new String(this.passClave.getPassword());
+        Profesor profesor = new Profesor(dni, apellidos, nombres, clave, cargo);
+        this.profesores.add(profesor);
+        for(Profesor p : this.profesores)
+            p.mostrar();
+//Fin de agregado
+        
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
