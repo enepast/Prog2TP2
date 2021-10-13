@@ -14,7 +14,7 @@ public class Profesor {
     private String apellidos;
     private String nombres;
     private String clave;
-    private String cargo;
+    private Cargo cargo;
 
     public Profesor(int dni, String apellidos, String nombres, String clave, String cargo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -52,11 +52,11 @@ public class Profesor {
         this.clave = clave;
     }
 
-    public String getCargo() {
+    public Cargo getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
     
