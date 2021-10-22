@@ -5,12 +5,19 @@
  */
 package idiomas.modelos;
 
+import lugares.modelos.Lugar;
+
 /**
  *
  * @author Chuba
  */
 public class Idioma {
+
     private String nombre;
+
+    public Idioma(String nombre) {
+        this.nombre = nombre;
+    }
 
     public String getNombre() {
         return nombre;
@@ -19,13 +26,10 @@ public class Idioma {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Nombre: " + this.nombre;
     }
 
-    public Idioma(String nombre) {
-        this.nombre = nombre;
-    }
-    
 }

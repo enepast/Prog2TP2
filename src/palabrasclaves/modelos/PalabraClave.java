@@ -10,7 +10,7 @@ package palabrasclaves.modelos;
  * @author Chuba
  */
 public class PalabraClave {
-    private String nombre;
+    private String nombre = "";
 
     public String getNombre() {
         return nombre;

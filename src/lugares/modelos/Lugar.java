@@ -10,16 +10,16 @@ package lugares.modelos;
  * @author Chuba
  */
 public class Lugar {
+
     private String nombre;
-    
-    @Override
-    public String toString(){
-        return "Nombre: " + this.nombre;
-    }
 
     public Lugar(String nombre) {
         this.nombre = nombre;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Nombre: " + this.nombre;
+    }
+
 }

@@ -1,12 +1,20 @@
 package grupos.modelos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Chuba
  */
 public class Grupo {
+
     private String nombre;
     private String descripcion;
+
+    public Grupo() {
+        this.nombre = "";
+        this.descripcion = "";
+    }
 
     public String getNombre() {
         return nombre;
@@ -23,8 +31,8 @@ public class Grupo {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    public void mostrar(){
+
+    public void mostrar() {
         System.out.println("Nombre: " + this.nombre + "\nDescripción: " + this.descripcion);
     }
 
@@ -32,6 +40,5 @@ public class Grupo {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
-    
-    
+
 }

@@ -5,6 +5,7 @@
  */
 package autores.vistas;
 
+import autores.modelos.Cargo;
 import autores.modelos.Profesor;
 import java.awt.Dialog;
 import java.util.ArrayList;
@@ -139,7 +140,7 @@ public class VentanaAMProfesor extends JDialog {
         String nombres = this.txtNombres.getText().trim();
         String cargo = this.txtCargo.getText().trim();
         String clave = new String(this.passClave.getPassword());
-        Profesor profesor = new Profesor(dni, apellidos, nombres, clave, cargo);
+        Profesor profesor = new Profesor(dni, apellidos, nombres, clave, Cargo.ADJUNTO);
         this.profesores.add(profesor);
         for(Profesor p : this.profesores)
             p.mostrar();
