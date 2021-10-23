@@ -5,7 +5,8 @@
  */
 package idiomas.modelos;
 
-import lugares.modelos.Lugar;
+import java.util.Objects;
+
 
 /**
  *
@@ -15,8 +16,12 @@ public class Idioma {
 
     private String nombre;
 
+   //constructor
     public Idioma(String nombre) {
         this.nombre = nombre;
+    }
+    public void mostrar(){
+        System.out.println(this.nombre);
     }
 
     public String getNombre() {
@@ -26,10 +31,35 @@ public class Idioma {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    //toString
     @Override
     public String toString() {
         return "Nombre: " + this.nombre;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Idioma other = (Idioma) obj;
+        if (!Objects.equals(this.nombre.toLowerCase(), other.nombre.toLowerCase())) {
+            return false;
+        }
+        return true;
     }
 
 }

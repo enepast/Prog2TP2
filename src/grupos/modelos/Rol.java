@@ -10,5 +10,5 @@ package grupos.modelos;
  * @author Chuba
  */
 public enum Rol {
-    ADMINISTRADOR, COLABORADOR
+   SUPERADMINISTRADOR,  ADMINISTRADOR, COLABORADOR
 }

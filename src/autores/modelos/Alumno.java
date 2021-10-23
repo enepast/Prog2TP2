@@ -9,51 +9,57 @@ package autores.modelos;
  *
  * @author Chuba
  */
-public class Alumno {
-    private int dni;
-    private String apellidos;
-    private String nombres;
-    private String clave;
+public class Alumno extends Autor {
+
     private String cx;
 
     public Alumno(int dni, String apellidos, String nombres, String clave, String cx) {
-        this.dni = dni;
-        this.apellidos = apellidos;
-        this.nombres = nombres;
-        this.clave = clave;
+        super(dni, apellidos, nombres, clave);
         this.cx = cx;
     }
 
-    public int getDni() {
-        return dni;
+        /**
+     *
+     * @return Este método devuelve Apellidos, Nombres
+     */
+    @Override
+    public String getApellidoNombre() {
+        return super.getApellidos() + ", " + super.getNombres();
+    }
+    
+    @Override
+    public void mostrar() {
+        System.out.println("[" + super.getDni() + "] " + super.getApellidos() + ", " + super.getNombres() + ", " + this.cx);
     }
 
-    public void setDni(int dni) {
-        this.dni = dni;
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + super.getDni();
+        return hash;
     }
 
-    public String getApellidos() {
-        return apellidos;
-    }
+    @Override
+    public boolean equals(Object obj) {
+        //Para comprobar si el DNI es el mismo
+        if (!super.equals(obj)) {
+            return true;
+        }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass().getSuperclass() != obj.getClass().getSuperclass()) {
+            return false;
+        }
+        final Alumno other = (Alumno) obj;
+        if (super.getDni() != other.getDni()) {
+            return false;
+        }
+        return true;
     }
 
     public String getCx() {
@@ -63,8 +69,5 @@ public class Alumno {
     public void setCx(String cx) {
         this.cx = cx;
     }
-    
-    public void mostrar(){
-        System.out.println("DNI: " + this.dni + ",Apellidos: " + this.apellidos + ",Nombres: " + this.nombres + ", CX: " + this.cx);
-    }
+
 }

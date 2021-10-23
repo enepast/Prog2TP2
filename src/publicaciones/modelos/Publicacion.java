@@ -10,6 +10,7 @@ import idiomas.modelos.Idioma;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Objects;
 import lugares.modelos.Lugar;
 import palabrasclaves.modelos.PalabraClave;
 import tipos.modelos.Tipo;
@@ -46,7 +47,7 @@ public class Publicacion {
      * Método para mostrar lo requerido en el punto 7 del TP3
      */
     public void mostrar() {
-        String lineTwo = this.miembro != null ? this.miembro.getUnProfesor().getApellidoNombre() : "";
+        String lineTwo = this.miembro != null ? this.miembro.getUnAutor().getApellidoNombre() : "";
         String lineThree = this.miembro != null ? this.miembro.getUnGrupo().getNombre() : "";
         String lineFour = this.miembro != null ? this.miembro.getUnRol().name() : "";
         String lineFive = this.unTipo != null ? this.unTipo.getNombre() : "";
@@ -67,6 +68,32 @@ public class Publicacion {
         System.out.println("Enlace: " + this.enlace);
 
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.titulo);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Publicacion other = (Publicacion) obj;
+        if (!Objects.equals(this.titulo.toLowerCase(), other.titulo.toLowerCase())) {
+            return false;
+        }
+        return true;
+    }
+    
 
     public String getTitulo() {
         return titulo;

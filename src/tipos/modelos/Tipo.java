@@ -5,6 +5,8 @@
  */
 package tipos.modelos;
 
+import java.util.Objects;
+
 /**
  *
  * @author Chuba
@@ -14,6 +16,10 @@ public class Tipo {
 
     public Tipo(String nombre) {
         this.nombre = nombre;
+    }
+    
+    public void mostrar(){
+        System.out.println(this.nombre);
     }
     
     public String getNombre() {
@@ -26,4 +32,35 @@ public class Tipo {
     public String toString(){
         return "Nombre: " + this.nombre;
         }
+
+    /**
+     * 
+     * @return Método de comparación
+     */
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Tipo other = (Tipo) obj;
+        if (!Objects.equals(this.nombre.toLowerCase(), other.nombre.toLowerCase())) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }

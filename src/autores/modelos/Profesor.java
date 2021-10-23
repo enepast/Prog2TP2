@@ -5,73 +5,77 @@
  */
 package autores.modelos;
 
-import grupos.modelos.MiembroEnGrupo;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author Chuba
  */
-public class Profesor {
+public class Profesor extends Autor {
 
-    private int dni;
-    private String apellidos;
-    private String nombres;
-    private String clave;
+//    private int dni;
+//    private String apellidos;
+//    private String nombres;
+//    private String clave;
     private Cargo cargo;
 
-    public Profesor() {
-        this.apellidos = "";
-        this.nombres = "";
-        this.clave = "";
-        this.cargo = Cargo.TITULAR;
-
-    }
-
+//    public Profesor() {
+//        this.apellidos = "";
+//        this.nombres = "";
+//        this.clave = "";
+//        this.cargo = Cargo.TITULAR;
+//
+//    }
     public Profesor(int dni, String apellidos, String nombres, String clave, Cargo cargo) {
-        this.dni = dni;
-        this.apellidos = apellidos;
-        this.nombres = nombres;
-        this.clave = clave;
+        super(dni, apellidos, nombres, clave);
+//        this.dni = dni;
+//        this.apellidos = apellidos;
+//        this.nombres = nombres;
+//        this.clave = clave;
         this.cargo = cargo;
     }
 
-    public int getDni() {
-        return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
+    @Override
+    public void mostrar() {
+        System.out.println("[" + super.getDni() + "] " + super.getApellidos() + ", " + super.getNombres() + ", " + this.cargo);
     }
 
     /**
-     * Este metodo devuelve el apellido del profesor
      *
-     * @return apellido del profesor
+     * @return Este método devuelve Apellidos, Nombres
      */
-    public String getApellidos() {
-        return apellidos;
+    @Override
+    public String getApellidoNombre() {
+        return super.getApellidos() + ", " + super.getNombres();
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        int aux = super.getDni();
+        hash = 37 * hash + aux;
+        return hash;
     }
 
-    public String getNombres() {
-        return nombres;
-    }
+    @Override
+    public boolean equals(Object obj) {
+        //Para comprobar si el DNI es el mismo
+        if (!super.equals(obj)) {
+            return true;
+        }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Profesor other = (Profesor) obj;
+        if (this.getDni() != other.getDni()) {
+            return false;
+        }
+        return true;
     }
 
     public Cargo getCargo() {
@@ -82,11 +86,4 @@ public class Profesor {
         this.cargo = cargo;
     }
 
-    public void mostrar() {
-        System.out.println("DNI: " + this.dni + ",Apellidos: " + this.apellidos + ",Nombres: " + this.nombres + ", Cargo: " + this.cargo);
-    }
-
-    public String getApellidoNombre() {
-        return this.apellidos + ", " + this.nombres;
-    }
 }
