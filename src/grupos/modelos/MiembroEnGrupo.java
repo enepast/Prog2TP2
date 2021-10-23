@@ -5,11 +5,7 @@
  */
 package grupos.modelos;
 
-import autores.modelos.Cargo;
-import autores.modelos.Profesor;
-import autores.modelos.Alumno;
 import autores.modelos.Autor;
-import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -24,7 +20,7 @@ public class MiembroEnGrupo {
 
     public MiembroEnGrupo(Rol unRol, Autor unAutor, Grupo unGrupo) {
         this.unRol = unRol;
-        this.unAutor= unAutor;
+        this.unAutor = unAutor;
         this.unGrupo = unGrupo;
     }
 
@@ -32,8 +28,6 @@ public class MiembroEnGrupo {
     public String toString() {
         return "MiembroEnGrupo{" + "unRol=" + unRol + ", unAutor=" + unAutor + ", unGrupo=" + unGrupo + '}';
     }
-    
-    
 
     public Rol getUnRol() {
         return unRol;
