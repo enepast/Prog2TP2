@@ -20,6 +20,10 @@ public class Grupo {
     private Autor autor;
     private Rol rol;
 
+    public int cantidadMiembros() {
+        return miembros.size();
+    }
+
     public Grupo() {
         this.nombre = "";
         this.descripcion = "";
@@ -30,8 +34,8 @@ public class Grupo {
         this.descripcion = descripcion;
     }
 
-    public void verMiembros() {
-        System.out.println(miembros);
+    public List verMiembros() {
+        return this.miembros;
     }
 
     /**
@@ -44,16 +48,18 @@ public class Grupo {
         MiembroEnGrupo miembroNuevo = new MiembroEnGrupo(rol, autor, this);
         if (!miembros.contains(miembroNuevo)) {
             miembros.add(miembroNuevo);
+            autor.agregarGrupo(this, rol);
             return true;
         }
         return false;
 
     }
 
-    public void quitarMiembro(Autor miembro) {
+    public void quitarMiembro(Autor author) {
         for (MiembroEnGrupo member : miembros) {
-            if (member.getUnAutor().equals(miembro)) {
+            if (member.getUnAutor().equals(author)) {
                 miembros.remove(member);
+                author.quitarGrupo(this);
             }
         }
     }
@@ -69,7 +75,7 @@ public class Grupo {
 
     public void mostrar() {
         for (MiembroEnGrupo member : miembros) {
-            System.out.println("Miembro: " + member.getUnAutor().getApellidoNombre() + "Descripción: " + member.getUnRol());
+            System.out.println("Miembro: " + member.getUnAutor().getApellidoNombre() + "Rol: " + member.getUnRol());
         }
     }
 
@@ -88,6 +94,14 @@ public class Grupo {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public List<MiembroEnGrupo> getMiembros() {
+        return miembros;
+    }
+
+    public void setMiembros(List<MiembroEnGrupo> miembros) {
+        this.miembros = miembros;
     }
 
     @Override

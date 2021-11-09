@@ -80,6 +80,10 @@ public class MiembroEnGrupo {
         if (!Objects.equals(this.unAutor, other.unAutor)) {
             return false;
         }
+        for (int i = 0; i < unGrupo.cantidadMiembros(); i++) {
+            //if (unGrupo.getMiembros().get(i).getUnAutor().getApellidoNombre() == other.getUnAutor().getApellidoNombre()) return true;
+            if (!unGrupo.getMiembros().get(i).getUnAutor().equals(other.getUnAutor())) return false;
+        }
         return true;
     }
 

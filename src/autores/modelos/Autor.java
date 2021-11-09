@@ -29,27 +29,28 @@ public abstract class Autor {
         this.clave = clave;
     }
 
-    public void verGrupos() {
-        System.out.println("\"Grupos: ");
-        for (MiembroEnGrupo member : miembros) {
-            System.out.println(member);
-        }
+    public ArrayList verGrupos() {
+        return this.miembros;
     }
+
+
 
     public boolean agregarGrupo(Grupo grupo, Rol rol) {
         MiembroEnGrupo miembroNuevo = new MiembroEnGrupo(rol, this, grupo);
         if (!miembros.contains(miembroNuevo)) {
             miembros.add(miembroNuevo);
+            grupo.agregarMiembro(this, rol);
             return true;
         }
         return false;
 
     }
 
-    public void quitarGrupo() {
+    public void quitarGrupo(Grupo group) {
         for (MiembroEnGrupo member : miembros) {
-            if (member.getUnGrupo().equals(miembros)) {
+            if (member.getUnGrupo().equals(group)) {
                 miembros.remove(member);
+                group.quitarMiembro(this);
             }
         }
     }
