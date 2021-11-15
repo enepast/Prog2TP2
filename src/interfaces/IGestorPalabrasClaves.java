@@ -6,18 +6,18 @@
 package interfaces;
 
 import java.util.ArrayList;
-import tipos.modelos.Tipo;
+import palabrasclaves.modelos.PalabraClave;
 
 /**
  *
  * @author Chuba
  */
-public interface IGestorTipos {
+public interface IGestorPalabrasClaves {
 
-    String nuevoTipo(String nombre);
+    String nuevaPalabraClave(String nombre);
 
-    public ArrayList<Tipo> verTipos();
+    ArrayList<PalabraClave> verPalabrasClaves();
 
-    public Tipo verTipo(String nombre);
+    PalabraClave verPalabraClave(String nombre);
 
 }

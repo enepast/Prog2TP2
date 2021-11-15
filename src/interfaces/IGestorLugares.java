@@ -6,18 +6,18 @@
 package interfaces;
 
 import java.util.ArrayList;
-import tipos.modelos.Tipo;
+import lugares.modelos.Lugar;
 
 /**
  *
  * @author Chuba
  */
-public interface IGestorTipos {
+public interface IGestorLugares {
 
-    String nuevoTipo(String nombre);
+    String nuevoLugar(String nombre);
 
-    public ArrayList<Tipo> verTipos();
+    ArrayList<Lugar> verLugares();
 
-    public Tipo verTipo(String nombre);
+    Lugar verLugar(String nombre);
 
 }

@@ -5,19 +5,19 @@
  */
 package interfaces;
 
+import idiomas.modelos.Idioma;
 import java.util.ArrayList;
-import tipos.modelos.Tipo;
 
 /**
  *
  * @author Chuba
  */
-public interface IGestorTipos {
+public interface IGestorIdiomas {
 
-    String nuevoTipo(String nombre);
+    String nuevoIdioma(String nombre);
 
-    public ArrayList<Tipo> verTipos();
+    ArrayList<Idioma> verIdiomas();
 
-    public Tipo verTipo(String nombre);
+    Idioma verIdioma(String nombre);
 
 }

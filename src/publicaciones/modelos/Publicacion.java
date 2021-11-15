@@ -10,6 +10,7 @@ import idiomas.modelos.Idioma;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import lugares.modelos.Lugar;
 import palabrasclaves.modelos.PalabraClave;
@@ -32,7 +33,7 @@ public class Publicacion {
     private Tipo unTipo;
     private MiembroEnGrupo miembro;
 
-    public Publicacion(String titulo, LocalDate fechaPublicacion, String enlace, String resumen, Idioma unIdioma, Lugar unLugar, Tipo unTipo, MiembroEnGrupo miembro) {
+    public Publicacion(String titulo, MiembroEnGrupo miembro, LocalDate fechaPublicacion, Tipo unTipo, Idioma unIdioma, Lugar unLugar, List<PalabraClave> palabrasClaves, String enlace, String resumen ) {
         this.titulo = titulo;
         this.fechaPublicacion = fechaPublicacion;
         this.enlace = enlace;

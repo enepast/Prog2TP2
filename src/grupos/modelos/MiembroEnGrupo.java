@@ -18,7 +18,7 @@ public class MiembroEnGrupo {
     private Autor unAutor;
     private Grupo unGrupo;
 
-    public MiembroEnGrupo(Rol unRol, Autor unAutor, Grupo unGrupo) {
+    public MiembroEnGrupo(Autor unAutor, Grupo unGrupo, Rol unRol) {
         this.unRol = unRol;
         this.unAutor = unAutor;
         this.unGrupo = unGrupo;

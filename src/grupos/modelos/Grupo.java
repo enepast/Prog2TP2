@@ -45,7 +45,7 @@ public class Grupo {
      * @return true if added success or false otherwise
      */
     public boolean agregarMiembro(Autor autor, Rol rol) {
-        MiembroEnGrupo miembroNuevo = new MiembroEnGrupo(rol, autor, this);
+        MiembroEnGrupo miembroNuevo = new MiembroEnGrupo(autor, this, rol);
         if (!miembros.contains(miembroNuevo)) {
             miembros.add(miembroNuevo);
             autor.agregarGrupo(this, rol);
@@ -56,12 +56,21 @@ public class Grupo {
     }
 
     public void quitarMiembro(Autor author) {
+        ArrayList<MiembroEnGrupo> nuevaLista = new ArrayList<>();
         for (MiembroEnGrupo member : miembros) {
-            if (member.getUnAutor().equals(author)) {
-                miembros.remove(member);
+            if (!member.getUnAutor().equals(author)) {
+                nuevaLista.add(member);
+//                miembros.remove(member);
                 author.quitarGrupo(this);
             }
         }
+        miembros = nuevaLista;
+//        for (MiembroEnGrupo member : miembros) {
+//            if (member.getUnAutor().equals(author)) {
+//                miembros.remove(member);
+//                author.quitarGrupo(this);
+//            }
+//        }
     }
 
     public boolean esSuperAdministradores() {

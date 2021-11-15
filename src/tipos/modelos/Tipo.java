@@ -12,29 +12,32 @@ import java.util.Objects;
  * @author Chuba
  */
 public class Tipo {
+
     private String nombre;
 
     public Tipo(String nombre) {
         this.nombre = nombre;
     }
-    
-    public void mostrar(){
+
+    public void mostrar() {
         System.out.println(this.nombre);
     }
-    
+
     public String getNombre() {
         return nombre;
     }
-    public void setNombre(String nombre){
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Nombre: " + this.nombre;
-        }
+    }
 
     /**
-     * 
+     *
      * @return Método de comparación
      */
     @Override
@@ -61,6 +64,5 @@ public class Tipo {
         }
         return true;
     }
-    
-    
+
 }
